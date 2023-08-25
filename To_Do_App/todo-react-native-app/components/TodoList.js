@@ -5,20 +5,6 @@ import TodoItem from '../components/TodoItem'; // Import the TodoItem component
 
 import { useNavigation } from '@react-navigation/native';
 
-// const TodoList = () => {
-//   const todos = readTodos(); // Get the list of todos
-
-//   return (
-//     <View>
-//       {todos.map(todo => (
-//         <TodoItem key={todo.id} todo={todo} />
-//       ))}
-//     </View>
-//   );
-// };
-
-// export default TodoList;
-
 
 const TodoList = () => {
   const navigation = useNavigation(); // Access the navigation object
