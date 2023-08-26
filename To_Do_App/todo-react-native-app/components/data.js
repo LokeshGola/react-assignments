@@ -21,6 +21,7 @@ const todos = [
 // const todos = []; // Your array of todos
 
 const createTodo = (title, description) => {
+  console.log("inside createTodo data array")
   const newTodo = {
     id: todos.length + 1,
     title,
@@ -28,6 +29,7 @@ const createTodo = (title, description) => {
     completed: false,
   };
   todos.push(newTodo);
+  console.log(todos)
   return newTodo;
 };
 

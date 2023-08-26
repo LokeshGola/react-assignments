@@ -1,16 +1,3 @@
-// import React from 'react';
-// import { View, Text } from 'react-native';
-
-// const TodoItem = ({ todo }) => {
-//   return (
-//     <View>
-//       <Text>Title: {todo.title}</Text>
-//       <Text>Description: {todo.description}</Text>
-//     </View>
-//   );
-// };
-
-// export default TodoItem;
 
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';

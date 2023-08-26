@@ -1,46 +1,24 @@
-// import React, { useState } from 'react';
-// import { View, Text, TextInput, Button } from 'react-native';
-// import { createTodo } from '../components/data'; // Import the createTodo function
-
-// const CreateTodo = () => {
-//   const [title, setTitle] = useState('');
-//   const [description, setDescription] = useState('');
-
-//   const handleCreateTodo = () => {
-//     createTodo(title, description); // Call the createTodo function
-//     setTitle('');
-//     setDescription('');
-//   };
-
-//   return (
-//     <View>
-//       <TextInput
-//         placeholder="Title"
-//         value={title}
-//         onChangeText={setTitle}
-//       />
-//       <TextInput
-//         placeholder="Description"
-//         value={description}
-//         onChangeText={setDescription}
-//       />
-//       <Button title="Create Todo" onPress={handleCreateTodo} />
-//     </View>
-//   );
-// };
-
-// export default CreateTodo;
-
 
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
-import { createTodo } from '../components/data';
+import { createTodo } from './data';
+
+import { useNavigation } from '@react-navigation/native';
 
 const CreateTodo = () => {
+  console.log("inside CreateTodo")
+
+  const navigation = useNavigation(); // Access the navigation object
+
+  const navigateToTodosScreen = () => {
+    navigation.navigate('TodosScreen'); // Navigate to CreateScreen
+  };
+
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
 
   const handleCreateTodo = () => {
+    console.log("inside handleCreateTodo")
     createTodo(title, description);
     setTitle('');
     setDescription('');
@@ -61,6 +39,8 @@ const CreateTodo = () => {
         onChangeText={setDescription}
       />
       <Button title="Create Todo" onPress={handleCreateTodo} />
+      <br/>
+      <Button title="Todo List" onPress={navigateToTodosScreen} />
     </View>
   );
 };

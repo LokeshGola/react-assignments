@@ -1,14 +1,23 @@
 import React from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
-import { readTodos } from '../components/data'; // Import the readTodos function
-import TodoItem from '../components/TodoItem'; // Import the TodoItem component
+import { readTodos } from '/components/data'; // Import the readTodos function
+import TodoItem from '/components/TodoItem'; // Import the TodoItem component
 
 import { useNavigation } from '@react-navigation/native';
-
+import  { useState, useEffect } from 'react';
 
 const TodoList = () => {
   const navigation = useNavigation(); // Access the navigation object
-  const todos = readTodos(); // Assuming you have the readTodos function imported
+  // const todos = readTodos(); // Assuming you have the readTodos function imported
+
+  const [todos, setTodos] = useState([]);
+
+  useEffect(() => {
+    // Fetch todos when the component mounts
+    const fetchedTodos = readTodos();
+    setTodos(fetchedTodos);
+  }, []); // Empty dependency array means this effect runs once on mount
+
 
   const navigateToCreateScreen = () => {
     navigation.navigate('CreateScreen'); // Navigate to CreateScreen
